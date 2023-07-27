@@ -1,0 +1,1262 @@
+/* підключення файлу скидання стилів */
+@import url("reset.css");
+
+body {
+  background-color: #0d0d11;
+  font-family: "Poppins";
+  font-weight: 300;
+  color: #9c9c9c;
+}
+
+/* щоб піджати footer до низу, а header до верху робимо  
+.wrapper {
+min-height: 100%;
+display: flex; 
+flex-direction: column;
+  overflow: clip; обрізається усе що не вмістилося у задані розміри */
+.wrapper {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: clip;
+}
+
+/* Задаемо почеткові параметри для усіх класів class*="__container" */
+/* max-width: 1310px; 1280px(макс. ширина контенкту на макеті + 15px + 15px (padding))  */
+/* margin: 0 auto; віставляемо увесь контент по центру */
+[class*="__container"] {
+  max-width: 1310px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/* Робимо аби сторінка автоматично збільшувалася на всю висоту екрану */
+/*   .page { flex: 1 1 auto; } */
+.page {
+  flex: 1 1 auto;
+}
+
+.page__start {
+  margin-bottom: 100px;
+}
+@media (max-width: 991.98px) {
+  .page__start {
+    margin-bottom: 50px;
+  }
+}
+
+/* так як усі кнопки на макеті мають однаковий стиль, зробили загальну кнопку з самого початку */
+.button {
+  display: inline-block;
+  text-align: center;
+  padding: 16px 30px;
+  border-radius: 50px;
+  background-color: #3d96f4;
+  color: #fff;
+  letter-spacing: 2px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.57; /*22px= 22/14=1.57 */
+}
+
+/* верстка чорної кнопки з section 1 */
+.button_dark {
+  background-color: rgba(129, 129, 139, 0.2);
+}
+
+/* зробили, щоб при зменшенні екрану зменшувалась конпка */
+@media (max-width: 991.98px) {
+  .button {
+    padding: 14px 20px;
+  }
+}
+
+.button:hover {
+  background-color: #6b9ed4;
+}
+
+/* чорна кнопка першої секції */
+.button_dark:hover {
+  background-color: rgba(156, 156, 165, 0.2);
+}
+
+/* посилання services для section 3 */
+.header-main__label {
+  display: inline-block;
+  border-radius: 12px;
+  border: 1px solid rgba(129, 129, 139, 0.2);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #9c9c9c;
+  padding: 11px 18px;
+  transition: border 0.3s ease 0s;
+}
+
+.header-main__label:hover {
+  border: 1px solid rgba(129, 129, 139, 0.4);
+}
+
+.header-main__label:not(:last-child) {
+  margin-bottom: 19px;
+}
+
+/* line-height: 1.19;=  line-height: 61.44px(по макету)/51px(font-size: 51px;) */
+.header-main__title {
+  font-size: 51px;
+  font-weight: 500;
+  line-height: 1.19;
+  color: #fff;
+  max-width: 520px;
+  position: relative;
+}
+
+.header-main__title:not(:last-child) {
+  margin-bottom: 28px;
+}
+
+/* задаємо стилі для всіх текстів р */
+/* line-height: 1.5; = 27px( на макеті)/18px(font-size: 18px;) */
+.header-main__text {
+  line-height: 1.5;
+  font-size: 18px;
+  color: #9c9c9c;
+  max-width: 500px;
+}
+
+.header-main__text:not(:last-child) {
+  margin-bottom: 33px;
+}
+
+/* стилізуємо кнопки першої section */
+/* column-gap: 32px; відстань між кнопками коли вони обна біля одної  */
+/* row-gap: 15px; відстань між кнопками коли вони одна під одною */
+.header-main__actions {
+  display: flex;
+  column-gap: 32px;
+  row-gap: 15px;
+}
+
+/* стилізуємо текст и кнопку section 6 */
+.header-main__body {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+.header-main__body .header-main__text {
+  margin: 0;
+}
+.header-main__body .header-main__actions {
+  align-self: flex-end;
+  flex: 0 0 auto;
+}
+/* max-width: none; зробили щоб зняти попередні обмеження і заголовок розтягнувся на усю ширину єкрану */
+.header-main__body .header-main__title {
+  max-width: none;
+}
+.header-main__body .header-main__text {
+  max-width: 740px;
+}
+
+/* робимо галочку біля списку у section 4 why */
+.header-main__list li {
+  position: relative;
+  min-height: 32px;
+  padding-left: 40px;
+  color: #9c9c9c;
+  padding-top: 5px;
+  line-height: 1.5;
+}
+.header-main__list li:not(:last-child) {
+  margin-bottom: 16px;
+}
+.header-main__list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  background: rgba(129, 129, 139, 0.1) url(../img/why/li-2.svg) center no-repeat;
+}
+
+/* робимо медіазапроси для першої section при зменшенні єкрану */
+@media (max-width: 991.98px) {
+  .header-main__title {
+    font-size: 44px;
+  }
+}
+
+@media (min-width: 768px) {
+  .header-main__title {
+    max-width: 520px;
+  }
+  .header-main__text {
+    max-width: 500px;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .header-main__title {
+    font-size: 32px;
+  }
+  .header-main__title:not(:last-child) {
+    margin-bottom: 15px;
+  }
+  .header-main__text:not(:last-child) {
+    margin-bottom: 15px;
+  }
+  /* для section 6 testimonials */
+  .header-main__body {
+    flex-direction: column;
+    gap: 0;
+  }
+  .header-main__body .header-main__actions {
+    align-self: flex-start;
+  }
+}
+
+/* цим запросом зробили, щоб кнопки першого section при зменшенні екрану ставали одна під одною */
+@media (max-width: 479.98px) {
+  .header-main__actions {
+    flex-direction: column;
+  }
+}
+
+/* задаємо стилі для всіх текстів р */
+/* line-height: 1.5; = 27px( на макеті)/18px(font-size: 18px;) */
+.text {
+  line-height: 1.5;
+  color: #81818b;
+}
+
+/* робимо аби шапка сайту завжди була зверху */
+/* z-index: 50; зробили щоб випадаюче меню перекривало темним фоном весь контент */
+.header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 50;
+  background-color: rgb(13, 13, 17, 0.5);
+}
+
+/* column-gap: 35px;-зробили відступ в середині контейнеру між внутрішніми елементами */
+.header__container {
+  display: flex;
+  align-items: center;
+  min-height: 116px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  column-gap: 35px;
+}
+
+.header__menu {
+  flex: 1 1 auto;
+}
+
+.icon-menu {
+  display: none;
+}
+
+/* column-gap: 35px;- зробили відстань між менюшками по 35px */
+/* flex-wrap: wrap; для того, щоб при зменшенні екрану меню переносилось у стовбчик з проміжком 3px row-gap: 3px;*/
+.menu__list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: end;
+  column-gap: 35px;
+  row-gap: 3px;
+}
+
+.menu__link {
+  display: block;
+  color: #fff;
+  font-size: 16px;
+  line-height: 1.62; /*26px= 26/16=1.62 */
+}
+
+.menu__link:hover {
+  text-decoration: underline;
+}
+
+.cart-header {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: #fff;
+}
+
+/* .cart-header:hover {text-decoration: underline;} при наведенні на меню воно буде підчеркнуте */
+.cart-header:hover {
+  text-decoration: underline;
+}
+
+.cart-header__text {
+  font-size: 18px;
+  line-height: 1.55; /*28px= 28/18=1.55 */
+}
+
+.cart-header__quantity {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: rgba(129, 129, 139, 0.3);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* flex: 0 0 auto; зробили, щоб при зменшенні екрану кнопка не зменшувалась у розмірах */
+.header__button {
+  flex: 0 0 auto;
+}
+
+.header__logo,
+.header__cart,
+.header__button {
+  position: relative;
+  z-index: 5;
+}
+
+/* зменшили відстань між внутрішніми елементами та менюшками при зменшенні екрану */
+@media (max-width: 991.98px) {
+  .header__container,
+  .menu__list {
+    column-gap: 25px;
+  }
+
+  .header__container {
+    min-height: 90px;
+  }
+}
+
+/* робимо бургер-меню, яке буде з'являтися при розмірі екрану менше 768px */
+@media (max-width: 767.98px) {
+  .header__container,
+  .menu__list {
+    column-gap: 15px;
+  }
+
+  .icon-menu {
+    display: block;
+    flex: 0 0 30px;
+    height: 18px;
+    z-index: 5;
+    position: relative;
+  }
+
+  .icon-menu span,
+  .icon-menu::before,
+  .icon-menu::after {
+    content: "";
+    right: 0;
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #fff;
+    transition: all 0.3s ease 0s;
+  }
+
+  .icon-menu::before {
+    top: 0;
+  }
+
+  .icon-menu::after {
+    bottom: 0;
+  }
+
+  .icon-menu span {
+    top: calc(50% - 1px);
+  }
+
+  /* робимо аби при натисканні на меню бургер воно перетворювалося на х, а середня риска зникала */
+  .menu-open .icon-menu span {
+    width: 0;
+  }
+
+  .menu-open .icon-menu::before {
+    top: calc(50% - 1px);
+    transform: rotate(-45deg);
+  }
+
+  .menu-open .icon-menu::after {
+    bottom: calc(50% - 1px);
+    transform: rotate(45deg);
+  }
+  /* завершили перетворення бургер меню на х */
+
+  /* початок верстки випадаючого меню з бургер-меню*/
+  /* overflow: auto;- для скролу випадаючого меню при зменшенні висоти екрану */
+  /* 1-поміняли left 0 на left -100% та добавили transition: left 0.3s ease 0s; щоб усе ховалось та виїджало випадаюче меню бургер */
+  .menu__body {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    left: -100%;
+    top: 0;
+    padding: 100px 15px 30px 15px;
+    overflow: auto;
+    transition: left 0.3s ease 0s;
+  }
+
+  /* робимо аби при скролі віпадаючого меню воно не пірнало і не відображалося під шапкою сайту */
+  /* 1-поміняли left 0 на left -100% та добавили transition: left 0.3s ease 0s; щоб усе ховалось та виїджало випадаюче меню бургер */
+  .menu__body::before {
+    content: "";
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: -100%;
+    height: 70px;
+    background-color: black;
+    z-index: 2;
+    transition: left 0.3s ease 0s;
+  }
+
+  .menu__list {
+    row-gap: 10px;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .menu__link {
+    font-size: 24px;
+  }
+
+  .header__container {
+    min-height: 70px;
+  }
+}
+/* кінець верстки випадаючого меню при зменшенні екрану */
+
+/* робимо аби при натисканні на меню бургер з'являлось випадаюче меню */
+.menu-open .menu__body,
+.menu-open .menu__body::before {
+  left: 0;
+}
+
+/* так як при зменшенні екрану усі елементи шапки не вміщується, прибераємо надпис з логотипу */
+/* overflow: hidden; скрити усе що не вміщюється у задані розміри */
+@media (max-width: 560px) {
+  .header__logo {
+    width: 38px;
+    flex: 0 0 38px;
+    overflow: hidden;
+  }
+
+  /* при зменшеному екрані cart та кількість товарів у корзині розт. у стовбчик  */
+  .header__cart {
+    flex-direction: column;
+  }
+}
+
+/* початок верстки section 1 main*/
+/* padding-top: 160px; = 116px висота header початковий + 44px відстань між секціями на макеті */
+.main {
+  padding-top: 160px;
+  padding-bottom: 100px;
+}
+
+.main__container {
+  display: flex;
+  gap: 32px;
+}
+
+/* .main__images {flex: 0 1 50%;} та .main__content {flex: 0 1 50%;} зробили щоб два контейнери займали однаковий простір та як вони на макеті однакової ширині */
+/* gap: 32px; відстань між контейнерами */
+/* align-self: center;зробили аби текстова частина була посередині картинок */
+.main__content {
+  flex: 0 1 50%;
+  align-self: center;
+}
+
+.main__header {
+  position: relative;
+}
+
+/* вставляємо декор у вигляді крапочок, робимо як псевдоелемент */
+.main__header::before {
+  content: "";
+  background: url("../img/main/decor.svg") 0 0 / 100% no-repeat;
+  width: 122px;
+  height: 122px;
+  position: absolute;
+  top: -20px;
+  left: -34px;
+}
+
+.main__images {
+  flex: 0 1 50%;
+}
+
+/* gap: 9.6%= 60px(бажана відстань між колонками картинок)/624px(ширина контейнеру з фото) */
+.images-main {
+  display: flex;
+  gap: 9.6%;
+}
+
+.images-main__column {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+/* робимо для витягнутих фото радіуси, щоб з прямокутних зробити як на макеті закругленими */
+.images-main__item {
+  border-radius: 50% / 29%;
+  overflow: hidden;
+}
+.images-main__item1,
+.images-main__item4 {
+  border-radius: 50% / 29%;
+}
+
+/* тепер робимо з маленьких фото закруглені як на макеті */
+.images-main__item2 {
+  border-radius: 50% 50% 0 50%;
+}
+.images-main__item3 {
+  border-radius: 50% 0 50% 50%;
+}
+
+/* transform: scale(1.01); зробили щоб не було білих полос на закруглених вуглах фото  */
+.images-main__item img {
+  max-width: 100%;
+  transform: scale(1.01);
+}
+
+/* padding-top: 120px; = 90px висота header при данному розмірі екрану + 30px відстань між секціями самі прийняли */
+@media (max-width: 991.98px) {
+  .main {
+    padding-top: 120px;
+    padding-bottom: 60px;
+  }
+}
+
+/* padding-top: 100px; = 70px висота header при данному розмірі екрану + 30px відстань між секціями самі прийняли */
+/* .main__container {flex-direction: column;} зробили щоб при зменшенні екрану контент перебудовувався у колонку */
+@media (max-width: 767.98px) {
+  .main {
+    padding-top: 100px;
+    padding-bottom: 30px;
+  }
+
+  .main__container {
+    flex-direction: column;
+  }
+}
+
+/* початок стилізації section 2 clients*/
+.clients {
+  padding-top: 100px;
+  padding-bottom: 70px;
+}
+
+.clients__title {
+  text-transform: uppercase;
+  color: #fff;
+  text-align: center;
+  letter-spacing: 1px;
+  font-size: 14px;
+  line-height: 1.57;
+  margin-bottom: 25px;
+}
+
+.clients__items {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  column-gap: 15px;
+  row-gap: 5px;
+}
+.client__item {
+  max-width: 100%;
+}
+
+@media (max-width: 991.98px) {
+  .clients {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+  .clients__title {
+    margin-bottom: 5px;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .clients {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+  .clients__title {
+    margin-bottom: 1px;
+  }
+}
+
+/* початок стилізації section 3 services */
+.services {
+  padding-top: 70px;
+  padding-bottom: 100px;
+}
+
+.services__container {
+  display: flex;
+  gap: 32px;
+}
+
+.services__content {
+  flex: 0 1 50%;
+  align-self: center;
+}
+
+.services__items {
+  display: flex;
+  flex: 0 1 50%;
+  justify-content: center;
+  gap: 32px;
+}
+
+/* робимо аби перша колонка з картками опустилася нижче по відношенню до другої колонки */
+.services__column:first-child {
+  padding-top: 48px;
+}
+
+.services__item:not(:last-child) {
+  margin-bottom: 32px;
+}
+
+.item-service {
+  border-radius: 30px;
+  background: rgba(129, 129, 139, 0.1);
+  padding: 55px 25px;
+  display: block;
+}
+
+.item-service__icon:not(:last-child) {
+  margin-bottom: 16px;
+}
+
+/* line-height: 1.42;= 27px(на макеті/19px) */
+.item-service__title {
+  font-size: 19px;
+  line-height: 1.42;
+  font-weight: 400;
+  color: #fff;
+}
+
+.item-service__title:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+@media (max-width: 1100px) {
+  .services__container {
+    flex-direction: column;
+  }
+
+  /* прибрали обмеження ширини аби текст розтягнувся на усю ширину  */
+  .services__header .header-main__title,
+  .services__header .header-main__text {
+    max-width: none;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .services {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .services {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+}
+
+/* зробили аби при такому розмірі єкрану карти стовали в одну колонку */
+@media (max-width: 620px) {
+  .services__items {
+    flex-direction: column;
+  }
+}
+
+/*  початок section 4 why */
+.why {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+.why__container {
+  display: flex;
+  column-gap: 64px;
+  row-gap: 32px;
+}
+
+.why__images {
+  flex: 0 1 50%;
+}
+
+/* align-self: flex-end; зробили аби при зменшенні екрану вілика картинка залишалась у нижній частині контейнера */
+.images-why {
+  display: flex;
+  position: relative;
+  align-self: flex-end;
+}
+
+.images-why__item {
+  overflow: hidden;
+}
+/* transform: scale(1.01); зробили щоб не було білих полос на закруглених вуглах фото  */
+.images-why__item img {
+  max-width: 100%;
+  transform: scale(1.01);
+}
+
+.images-why__item_1 {
+  border-radius: 90% 0 49% 49% / 50% 0 31% 31%;
+}
+
+/* align-self: flex-end;зробили аби маленька картинка опустилася до низу */
+.images-why__item_2 {
+  align-self: flex-end;
+  border-radius: 50% 50% 50% 0;
+}
+
+/* align-self: center;зробили щоб контент був по центру картинок по осі у */
+.why__content {
+  flex: 0 1 50%;
+  align-self: center;
+}
+
+/* вставляємо декор у вигляді крапочок, робимо як псевдоелемент */
+.images-why::before {
+  content: "";
+  background: url("../img/why/decor-why.svg") 0 0 / 100% no-repeat;
+  width: 122px;
+  height: 122px;
+  position: absolute;
+  bottom: -20px;
+  left: -34px;
+}
+
+@media (max-width: 991.98px) {
+  .why {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+}
+
+/* flex-direction: column-reverse; зробили щоб при данному розмірі єкрану у section 4 спочатку йшов текст а потім картинки,якби зробили flex-direction: column то спочатку були б картинки а потім фото */
+@media (max-width: 767.98px) {
+  .why {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+  .why__container {
+    flex-direction: column-reverse;
+  }
+}
+
+/* початок стилізації section 5 advantages */
+.advantages {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+.advantages__container {
+  display: flex;
+  row-gap: 32px;
+}
+
+/* grid-template-columns: repeat(2, 1fr); grid-template-rows: repeat(2, 1fr);зробили щоб картки стали у потрібному нам порядку */
+.advantages__items {
+  flex: 1 1 auto;
+  padding-right: 32px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 32px;
+}
+
+.advantages__item {
+  padding: 40px;
+  border-radius: 30px;
+  background-color: rgba(129, 129, 139, 0.1);
+}
+
+.advantages__value {
+  font-size: 51px;
+  font-weight: 500;
+  color: #fff;
+}
+
+.advantages__value:not(:last-child) {
+  margin-bottom: 32px;
+}
+
+.advantages__text {
+  font-size: 18px;
+  line-height: 1.5;
+}
+.advantages__image {
+  align-self: flex-end;
+  flex: 0 0 38%;
+  overflow: hidden;
+  border-radius: 0% 68% 60% 60% / 0% 68% 51% 51%;
+}
+/* transform: scale(1.01); зробили щоб не було білих полос на закруглених вуглах фото  */
+.advantages__image img {
+  max-width: 100%;
+  transform: scale(1.01);
+}
+
+@media (max-width: 991.98px) {
+  .advantages {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+  .advantages__items {
+    padding-right: 0;
+  }
+  .advantages__container {
+    flex-direction: column;
+  }
+  .advantages__image {
+    align-self: center;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .advantages {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+}
+/* grid-template-columns: auto; зробили щоб при цьому розмірі екрану картки вистроювалися у одну колонку */
+@media (max-width: 650px) {
+  .advantages__items {
+    grid-template-columns: auto;
+  }
+}
+
+/* початок section 6 testimonials */
+.testimonials {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+.testimonials__header {
+  margin-bottom: 64px;
+}
+
+.testimonials__items {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+.item-testimonial {
+  padding: 64px 40px;
+  border-radius: 30px;
+  background-color: rgba(129, 129, 139, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.user-testimonial {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.user-testimonial__avatar {
+  flex: 0 0 68px;
+  overflow: hidden;
+}
+
+.user-testimonial__avatar img {
+  max-width: 100%;
+  transform: scale(1.02);
+}
+.user-testimonial__avatar_1 {
+  border-radius: 0 50% 50% 50%;
+}
+.user-testimonial__avatar_2 {
+  border-radius: 50% 0 50% 50%;
+}
+.user-testimonial__avatar_3 {
+  border-radius: 50% 50% 0 50%;
+}
+
+.user-testimonial__title {
+  line-height: 1.5;
+  color: #fff;
+}
+.user-testimonial__title:not(:last-child) {
+  margin-bottom: 7px;
+}
+.user-testimonial__company {
+  font-size: 14px;
+  line-height: 1.57;
+}
+
+.item-testimonial__title {
+  font-size: 32px;
+  line-height: 1.4;
+  color: #fff;
+}
+.item-testimonial__text {
+  font-size: 16px;
+  flex: 1 1 auto;
+  line-height: 1.5;
+}
+
+@media (max-width: 1100px) {
+  .testimonials__items {
+    grid-template-columns: auto;
+  }
+}
+@media (max-width: 991.98px) {
+  .testimonials {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+  .testimonials__header {
+    margin-bottom: 40px;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .testimonials {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+  .item-testimonial {
+    padding: 30px 15px;
+  }
+}
+
+/* початок section 7 blog */
+.blog {
+  padding-top: 100px;
+  padding-bottom: 150px;
+}
+
+.blog__header {
+  margin-bottom: 64px;
+}
+
+.blog__items {
+  display: grid;
+  gap: 48px;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.item-blog {
+  border-radius: 24px;
+  background-color: rgba(129, 129, 139, 0.1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+.item-blog__header {
+  position: relative;
+}
+
+.item-blog__category {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  border-radius: 0px 10px 0px 0px;
+  background-color: rgba(129, 129, 139, 0.5);
+  color: #fff;
+  font-size: 14px;
+  line-height: 1.57;
+  padding: 10px;
+}
+
+/* padding-bottom: 49%;=194px/394px розміри фото на макеті */
+.item-blog__image {
+  display: block;
+  position: relative;
+  padding-bottom: 49%;
+}
+/* object-fit: cover; зробили щоб зображення було адаптивним */
+.item-blog__image img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+  transform: scale(1.01);
+}
+.item-blog__body {
+  padding: 36px 26px;
+}
+.item-blog__data {
+  color: rgba(129, 129, 139, 0.9);
+}
+.item-blog__data:not(:last-child) {
+  margin-bottom: 20px;
+}
+.item-blog__title:hover {
+  text-decoration: underline;
+}
+.item-blog__title {
+  color: #fff;
+  font-size: 19px;
+  line-height: 1.42;
+}
+.item-blog__title:not(:last-child) {
+  margin-bottom: 30px;
+}
+
+.item-blog__text:not(:last-child) {
+  margin-bottom: 21px;
+}
+.item-blog__link {
+  color: #3d96f4;
+}
+.item-blog__link:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 1100px) {
+  .blog__items {
+    gap: 20px;
+  }
+  .item-blog__body {
+    padding: 25px 15px;
+  }
+}
+@media (max-width: 991.98px) {
+  .blog {
+    padding-top: 50px;
+    padding-bottom: 100px;
+  }
+  .blog__header {
+    margin-bottom: 44px;
+  }
+}
+/* grid-template-columns: auto; зробили щоб при такому розмірі екрану три карти з фото розміщювались одна під одною а не ставали меншими стоячи одна біля одної */
+@media (max-width: 767.98px) {
+  .blog {
+    padding-top: 30px;
+    padding-bottom: 50px;
+  }
+  .blog__items {
+    grid-template-columns: auto;
+  }
+  .blog__header {
+    margin-bottom: 25px;
+  }
+}
+
+/* початок section 8 start */
+
+.start__body {
+  border-radius: 30px;
+  background-color: rgba(129, 129, 139, 0.1);
+  display: flex;
+  align-items: center;
+  padding: 52px 40px;
+}
+
+.start__column {
+  flex: 0 1 50%;
+  text-align: center;
+}
+.start__title {
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 1.4;
+  color: #fff;
+}
+.start__title:not(:last-child) {
+  margin-bottom: 16px;
+}
+
+/* display: inline-block; для того щоб на нього працювало   align-items: center; */
+.start__text {
+  max-width: 340px;
+  display: inline-block;
+}
+.start__actions {
+  display: flex;
+  row-gap: 20px;
+  column-gap: 32px;
+  justify-content: center;
+}
+
+/* flex-direction: column; зробіли щоб при зменшенні екрану контент та кнопки були в одну колонку */
+/* align-items: stretch; кнопки розтягнулися на усю ширину свого контейнера */
+@media (max-width: 991.98px) {
+  .start__title {
+    font-size: 24px;
+  }
+  .start__body {
+    align-items: stretch;
+    flex-direction: column;
+    row-gap: 20px;
+  }
+}
+@media (max-width: 767.98px) {
+  .start__title {
+    font-size: 24px;
+  }
+}
+@media (max-width: 479.98px) {
+  .start__actions {
+    flex-direction: column;
+  }
+}
+
+.footer__main {
+  padding-top: 160px;
+  padding-bottom: 160px;
+}
+@media (max-width: 991.98px) {
+  .footer__main {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+}
+@media (max-width: 767.98px) {
+  .footer__main {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+}
+@media (max-width: 479.98px) {
+  .footer__main {
+    padding-top: 160px;
+    padding-bottom: 160px;
+  }
+}
+
+.main-footer__container {
+  display: grid;
+  gap: 64px;
+  grid-template-columns: minmax(auto, 378px) auto auto minmax(auto, 378px);
+}
+@media (max-width: 1100px) {
+  .main-footer__container {
+    gap: 45px;
+    grid-template-columns: minmax(auto, 378px) auto auto;
+  }
+  /* зробили аби перша колонка стала зверху на усю ширину контейнеру а знизу три інші колонки */
+  .main-footer__column:nth-child(1) {
+    grid-column: span 3;
+  }
+}
+
+/* на цьому запросі перейшли що перша колонка на усю ширину, потім дві колонки і остання колонка на усю ширину */
+@media (max-width: 767.98px) {
+  .main-footer__container {
+    gap: 35px;
+    grid-template-columns: auto auto;
+  }
+  .main-footer__column:nth-child(1) {
+    grid-column: span 2;
+  }
+  .main-footer__column:nth-child(4) {
+    grid-column: span 2;
+  }
+}
+
+.main-footer__column {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.social {
+  display: flex;
+  gap: 16px;
+}
+.social__link {
+  flex: 0 0 36px;
+  height: 36px;
+  border-radius: 36px;
+  border: 1px solid rgba(129, 129, 139, 0.9);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.3s ease 0s;
+}
+.social__link:hover {
+  border: 1px solid rgba(255, 255, 255, 1);
+}
+.main-footer__label {
+  font-size: 20px;
+  line-height: 1.2;
+  color: #fff;
+  font-weight: 300;
+}
+
+/* зробили відстань між стрічками менюшек */
+.menu-footer__list {
+  display: grid;
+  gap: 24px;
+}
+
+.menu-footer__link {
+  line-height: 1.4;
+}
+
+.menu-footer__link:hover {
+  color: #fff;
+}
+
+/* gap: 16px; відстань між кнопками */
+.subscribe {
+  display: flex;
+  gap: 16px;
+}
+@media (max-width: 479.98px) {
+  .subscribe {
+    flex-direction: column;
+  }
+}
+
+.subscribe__input {
+  height: 52px;
+  width: 100%;
+  border-radius: 50px;
+  border: 1px solid rgba(129, 129, 139, 0.3);
+  color: #fff;
+  padding: 0 30px;
+  background-color: transparent;
+}
+.subscribe__input::placeholder {
+  color: #999;
+}
+
+.bottom-footer {
+  border-top: 1px solid rgba(129, 129, 139, 0.2);
+  padding-top: 45px;
+  padding-bottom: 45px;
+}
+
+.bottom-footer__copy {
+  text-align: center;
+  color: #9c9c9c;
+}
+
+@media (max-width: 767.98px) {
+  .bottom-footer {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+}
